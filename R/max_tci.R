@@ -13,6 +13,8 @@ max_tci <- function(n) {
   
   if(!is.integer(n) | n <= 1) stop("n must be an integer > 1")
   
+  print(1)
+  
   # The max TCI is the number of combinations of n elements taken 3 at a time (number of possible triplets among n elements)
   return(choose(n, 3))
   
