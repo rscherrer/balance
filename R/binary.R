@@ -10,13 +10,15 @@
 #' @references Crawley, Michael J. The R book. John Wiley & Sons, 2012.
 
 binary <- function(x) {
-  i <- 0
-  string <- numeric(32)
-  while(x > 0) {
-    string[32 - i] <- x %% 2
-    x <- x %/% 2
-    i <- i + 1 
+  if(x == 0) return(0) else {
+    i <- 0
+    string <- numeric(32)
+    while(x > 0) {
+      string[32 - i] <- x %% 2
+      x <- x %/% 2
+      i <- i + 1 
+    }
+    first <- match(1, string)
+    string[first:32] 
   }
-  first <- match(1, string)
-  string[first:32] 
 }
