@@ -17,7 +17,7 @@ min_tci <- function(n) {
   a <- sapply(0:(n-1), function(k) {
 
     # First turn k into binary
-    vecBinary <- binary(k)
+    vecBinary <- balance::binary(k)
     
     # Then sum all ones
     sumOnes <- sum(vecBinary)
