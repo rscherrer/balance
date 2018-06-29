@@ -35,7 +35,7 @@ make_balance_files <- function(path_to_data, path_to_output, nLim) {
   balanceFiles <- list.files(path_to_output)
   
   # For each file...
-  pbapply::pbSapply(treeFiles, function(curr.file) {
+  pbapply::pbsapply(treeFiles, function(curr.file) {
     
     # Is there a balance file with that name?
     outputfile <- gsub("simul_", "balance_", curr.file)
