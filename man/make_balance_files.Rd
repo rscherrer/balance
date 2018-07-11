@@ -14,10 +14,22 @@ make_balance_files(path_to_data, path_to_output, nLim)
 \item{nLim}{The number of replicate trees to look for per parameter set}
 }
 \value{
-As many zeros as files in \code{path_to_data} if everything went fine
+The function returns a bunch of zeros. But it saves as many output files that there were files in the input directory. There is one saved file per parameter combination. Each saved file contains as many rows as there were trees. There are 10 columns.
+\itemize{
+\item{\code{nTrees}: number of tips of the incipient species tree}
+\item{\code{tciTrees}: TCI of the incipient species tree}
+\item{\code{mintciTrees}: lowest possible TCI for a tree of this size}
+\item{\code{maxtciTrees}: largest possible TCI for a tree of this size}
+\item{\code{ntciTrees}: normalized TCI of the incipient-species tree (corrected for the effect of tree size)}
+\item{\code{nStrees}: number of tips of the good species tree}
+\item{\code{tciStrees}: TCI of the good species tree}
+\item{\code{mintciStrees}: lowest possible TCI for a tree of this size}
+\item{\code{maxtciStrees}: largest possible TCI for a tree of this size}
+\item{\code{ntciTrees}: normalized TCI of the good-species tree (corrected for the effect of tree size)}
+}
 }
 \description{
-This function turns the input number into a binary sequence.
+This function reads lists of phylogenetic trees from a tree folder, calculates the total cophenetic index (TCI, Mir et al. 2013) for each tree, and saves data frames summarizing the calculations.
 }
 \author{
 Raphael Scherrer
